@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './Login'; // 로그인 페이지 컴포넌트
+import Join from './Join';   // 회원가입 페이지 컴포넌트
+import FindId from './FindId'; // 아이디 찾기 페이지 컴포넌트
+import FindPW from './FindPW';
+import Editinfo from './EditInfo';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Login />} />
+                <Route path="/join" element={<Join />} />
+                <Route path="/find-id" element={<FindId />} />
+                <Route path="/find-pw" element={<FindPW />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
